@@ -581,7 +581,7 @@ export default function Home() {
                       type="submit"
                       className="rounded-full bg-[#F0BE0A] px-8 py-3 text-xs font-bold text-slate-950 shadow-md hover:bg-[#d4a708] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#F0BE0A] tracking-wider uppercase"
                     >
-                      Submit Message
+                      Enviar Mensaje
                     </button>
                   </div>
                 </form>
