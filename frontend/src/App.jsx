@@ -30,13 +30,13 @@ function App() {
               Home
             </a>
             <a href="#about-us" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Sobre
+              Sobre Nosotros
             </a>
             <a href="#servicios" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Casos
+             Servicios
             </a>
             <a href="#blog" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Servicios
+              Blog
             </a>
             <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
               Contacto

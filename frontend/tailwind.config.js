@@ -10,7 +10,8 @@ export default {
         'custom-bg': '#EDF0F0',
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'], 
+        serif: ['Libre Caslon Text', 'Georgia', 'serif'], 
       },
     },
   },

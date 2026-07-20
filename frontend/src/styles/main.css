@@ -1,4 +1,9 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+h1, h2, h3 {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+}
 
 body {
   margin: 0;
@@ -24,4 +29,10 @@ body {
 @keyframes fadeInRight {
   0% { opacity: 0; transform: translateX(40px); }
   100% { opacity: 1; transform: translateX(0); }
+}
+
+@utility clip-diagonal {
+  @media (min-width: 1024px) {
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+  }
 }
