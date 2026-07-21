@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
 import Home from './pages/Home'; 
+import AboutUs from './pages/aboutus'; 
+import Services from './pages/Services'; 
 import heroBg from './assets/hero-bg.webp'; 
 import logoJae from './assets/consultoresjae.png'; 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [paginaActual, setPaginaActual] = useState('home'); 
 
   return (
-    <div 
-      className="relative min-h-screen bg-center bg-no-repeat antialiased text-slate-100 font-['Poppins']"
-      style={{ 
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
-        backgroundSize: '100vw 100vh',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <div className="relative min-h-screen bg-[#090d16] antialiased text-slate-100 font-['Poppins']">
       
       <header className="fixed top-0 left-0 z-50 w-full backdrop-blur-sm border-b border-white/10 bg-[#EDF0F0]/10 md:bg-transparent">
         <div className="mx-auto flex max-w-7xl h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
           
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => setPaginaActual('home')}>
             <img 
               src={logoJae} 
               alt="Logo Grupo Advmarc Consultores Jae" 
@@ -27,20 +23,33 @@ function App() {
             />
           </div>
           
-          <nav className="hidden md:flex space-x-10">
-            <a href="/" className="text-sm font-medium text-white border-b-2 border-[#F0BE0A] pb-1">
+          <nav className="hidden md:flex space-x-10 items-center">
+            <button 
+              onClick={() => setPaginaActual('home')} 
+              className={`text-sm font-medium transition-colors pb-1 cursor-pointer ${paginaActual === 'home' ? 'text-white border-b-2 border-[#F0BE0A]' : 'text-slate-300 hover:text-white'}`}
+            >
               Home
-            </a>
-            <a href="#about-us" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => setPaginaActual('about')} 
+              className={`text-sm font-medium transition-colors pb-1 cursor-pointer ${paginaActual === 'about' ? 'text-white border-b-2 border-[#F0BE0A]' : 'text-slate-300 hover:text-white'}`}
+            >
               Sobre Nosotros
-            </a>
-            <a href="#servicios" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => setPaginaActual('services')} 
+              className={`text-sm font-medium transition-colors pb-1 cursor-pointer ${paginaActual === 'services' ? 'text-white border-b-2 border-[#F0BE0A]' : 'text-slate-300 hover:text-white'}`}
+            >
                Servicios
-            </a>
+            </button>
             <a href="https://consultoresjae.com/blog/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-                Blog
+               Blog
             </a>
-            <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="/#contact" 
+              onClick={() => setPaginaActual('home')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Contacto
             </a>
           </nav>
@@ -49,7 +58,7 @@ function App() {
             <button 
               type="button" 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none" 
+              className="text-slate-300 hover:text-white focus:outline-none cursor-pointer" 
               aria-label="Abrir menú móvil"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -65,38 +74,35 @@ function App() {
 
         {isOpen && (
           <div className="md:hidden bg-[#EDF0F0] text-slate-900 border-b border-slate-300 px-4 pt-4 pb-6 space-y-3 shadow-xl">
-            <a 
-              href="/" 
-              onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-slate-900 border-b border-slate-200 pb-2"
+            <button 
+              onClick={() => { setPaginaActual('home'); setIsOpen(false); }}
+              className="block text-base font-medium text-slate-900 border-b border-slate-200 pb-2 w-full text-left cursor-pointer"
             >
               Home
-            </a>
-            <a 
-              href="#about-us" 
-              onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2"
+            </button>
+            <button 
+              onClick={() => { setPaginaActual('about'); setIsOpen(false); }}
+              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2 border-b border-slate-200 w-full text-left cursor-pointer"
             >
               Sobre Nosotros
-            </a>
-            <a 
-              href="#servicios" 
-              onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2"
+            </button>
+            <button 
+              onClick={() => { setPaginaActual('services'); setIsOpen(false); }}
+              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2 border-b border-slate-200 w-full text-left cursor-pointer"
             >
               Servicios
-            </a>
+            </button>
             <a 
-              href="#blog" 
+              href="https://consultoresjae.com/blog/" 
               onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2"
+              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors pb-2 border-b border-slate-200 w-full text-left"
             >
               Blog
             </a>
             <a 
-              href="#contact" 
-              onClick={() => setIsOpen(false)}
-              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors"
+              href="/#contact" 
+              onClick={() => { setPaginaActual('home'); setIsOpen(false); }}
+              className="block text-base font-medium text-slate-700 hover:text-slate-900 transition-colors w-full text-left"
             >
               Contacto
             </a>
@@ -104,7 +110,24 @@ function App() {
         )}
       </header>
 
-      <Home />
+      {paginaActual === 'home' && (
+        <div
+          className="min-h-screen"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <Home />
+        </div>
+      )}
+
+      {paginaActual === 'about' && <AboutUs />}
+
+      {paginaActual === 'services' && <Services />}
+
     </div>
   );
 }
