@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import aboutImg from '../assets/about-legal.jpg';
-import aboutImg2 from '../assets/about-legal2.jpg';
-import aboutImg3 from '../assets/empresas.jpg';
-import aboutImg4 from '../assets/personas.jpg';
-import aboutImg5 from '../assets/networking.jpg';
-import aboutImg6 from '../assets/testimonios.jpg';
+import aboutImg from '../assets/about-legal.webp';
+import aboutImg2 from '../assets/about-legal2.webp';
+import aboutImg3 from '../assets/empresas.webp';
+import aboutImg4 from '../assets/personas.webp';
+import aboutImg5 from '../assets/networking.webp';
+import aboutImg6 from '../assets/testimonios.webp';
 
 
 export default function Home() {
@@ -389,7 +389,39 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="w-full bg-white py-12 md:py-16 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            <div className="space-y-3 text-center md:text-left">
+              <span className="text-xs font-bold text-amber-700 tracking-widest uppercase block">
+                ACTUALIDAD JURÍDICA Y REGULATORIA
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+                Mantente al día
+              </h2>
+              <p className="text-sm text-slate-600 max-w-xl leading-relaxed">
+                Explora nuestros artículos detallados escritos por nuestros especialistas.
+              </p>
+            </div>
 
+            <div className="shrink-0">
+              <a
+                href="https://consultoresjae.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-md bg-[#090d16] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-slate-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#F0BE0A] focus:ring-offset-2"
+              >
+                Visitar Nuestro Blog
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <section className="relative w-full overflow-hidden bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[450px]">

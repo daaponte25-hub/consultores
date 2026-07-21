@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Home from './pages/Home'; 
-import heroBg from './assets/hero-bg.jpg'; 
+import heroBg from './assets/hero-bg.webp'; 
 import logoJae from './assets/consultoresjae.png'; 
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
             <a href="#servicios" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
                Servicios
             </a>
-            <a href="#blog" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Blog
+            <a href="https://consultoresjae.com/blog/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                Blog
             </a>
             <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
               Contacto
